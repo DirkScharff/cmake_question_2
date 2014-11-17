@@ -1,4 +1,4 @@
-cmake_question_2
+CMAKE How to get Target File Location
 ================
 
 I'm trying to get the location of a static library of another project. I tried
