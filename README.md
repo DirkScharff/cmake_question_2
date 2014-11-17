@@ -5,18 +5,18 @@ I'm trying to get the location of a static library of another project. I tried
 
 get_property(target_name TARGET Test PROPERTY LOCATION) but CMAKE gives the following error
     
-    CMake Error at Test/project.cmake:20 (get_property):
-    The LOCATION property may not be read from target "Test".
+    CMake Error at project.cmake:6 (get_property):
+    The LOCATION property may not be read from target "A".
     Use the target name directly with add_custom_command, or use the generator
     expression $<TARGET_FILE>, as appropriate.
 
 I tried to use the generator expression mentioned in the error message with no success. 
 
-    MESSAGE($<TARGET_FILE:Test>)
+    MESSAGE($<TARGET_FILE:A>)
 
 just outputs the exact same string, so the generator expression doesn't seem to be evaluated at all:
 
-    $<TARGET_FILE:Test>
+    $<TARGET_FILE:A>
 
 I read the [Documentation](http://www.cmake.org/cmake/help/v3.0/manual/cmake-generator-expressions.7.html). In the first lines it mentions:
 
